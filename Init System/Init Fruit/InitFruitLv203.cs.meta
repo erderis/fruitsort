@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: 989bfdfc16ad02049ad6d46d2501b801
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fruitsOrange: {fileID: 8172955263775462108, guid: bdbe09a9453819c4da9b672997f08823,
+      type: 3}
+  - fruitsCherry: {fileID: 677323675187271692, guid: 1d5eac9859e3da64abc7fd0db264c2e9,
+      type: 3}
+  - fruitsBanana: {fileID: 1879445823829241972, guid: 98710897df696fa479798172ee32b8d4,
+      type: 3}
+  - fruitsApple: {fileID: 3379397512366224581, guid: bda5561abab47864cb380a9f86d3362a,
+      type: 3}
+  - fruitsMelon: {fileID: 6021493416236792204, guid: 1452bb52d34fa18428cf9b0ebe4377f0,
+      type: 3}
+  - fruitsStrawberry: {fileID: 8172955263775462108, guid: 1226766f5bc36d7498c6fbb02417a24d,
+      type: 3}
+  - fruitsEggplant: {fileID: 8172955263775462108, guid: 38277b076a9504e499bee53a10b53b5d,
+      type: 3}
+  - fruitsPumpkin: {fileID: 8172955263775462108, guid: 6bbeac42ee026584a84fa494ff2c4bf5,
+      type: 3}
+  - fruitsGrape: {fileID: 8172955263775462108, guid: 21d648c632e06044c81df0f4ebf7b379,
+      type: 3}
+  - fruitsBlackBerry: {fileID: 8172955263775462108, guid: 2b94fe81c5727104c977ed915fe6c27f,
+      type: 3}
+  - fruitsBlueBerry: {fileID: 8172955263775462108, guid: ef92e94a67ecee9409a94dfe1a695c33,
+      type: 3}
+  - fruitsManggoes: {fileID: 8172955263775462108, guid: 1d5e128c9e4022040964adc96a1b8d72,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

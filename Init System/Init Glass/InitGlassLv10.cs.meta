@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b8bd6cfcd2535a347b941a042d876379
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - glass: {fileID: 7638129838397751746, guid: 730a84af2c4b10244ac0460e1ec11c50, type: 3}
+  - glass1: {instanceID: 0}
+  - glass2: {instanceID: 0}
+  - glass3: {instanceID: 0}
+  - glass4: {instanceID: 0}
+  - glass5: {instanceID: 0}
+  - glass6: {instanceID: 0}
+  - glass7: {instanceID: 0}
+  - glass8: {instanceID: 0}
+  - glass9: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

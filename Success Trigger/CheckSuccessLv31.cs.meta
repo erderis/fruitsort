@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b093ceed52a2e8c469976eae7ac94cb9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - canvasButton: {instanceID: 0}
+  - canvasSuccess: {fileID: 3358992900252953587, guid: 0beef01abdea3524f9a1c67e3bdb988d,
+      type: 3}
+  - particleConfetti: {fileID: 1228193759147785743, guid: 3d84550be7807254c96d1f5327940c2e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
