@@ -291,7 +291,7 @@ public class InitFruitLv289 : MonoBehaviour
     {
         grape1 = Instantiate(fruitsGrape, pos3b, Quaternion.identity); //ungu
         grape2 = Instantiate(fruitsGrape, pos1d, Quaternion.identity);
-        grape3 = Instantiate(fruitsGrape, pos2f, Quaternion.identity);
+        grape3 = Instantiate(fruitsGrape, pos2g, Quaternion.identity);
         grape4 = Instantiate(fruitsGrape, pos1i, Quaternion.identity);
         grape1.name = "grape1";
         grape2.name = "grape2";

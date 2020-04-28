@@ -303,7 +303,7 @@ public class InitFruitLv183 : MonoBehaviour
     {
         blackberry1 = Instantiate(fruitsBlackBerry, pos4c, Quaternion.identity); //coklat
         blackberry2 = Instantiate(fruitsBlackBerry, pos1d, Quaternion.identity);
-        blackberry3 = Instantiate(fruitsBlackBerry, pos4g, Quaternion.identity);
+        blackberry3 = Instantiate(fruitsBlackBerry, pos2g, Quaternion.identity);
         blackberry4 = Instantiate(fruitsBlackBerry, pos4l, Quaternion.identity);
         blackberry1.name = "blackberry1";
         blackberry2.name = "blackberry2";

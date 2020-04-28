@@ -230,8 +230,8 @@ public class InitFruitLv269 : MonoBehaviour
 
     void InstantiateApple()
     {
-        apple1 = Instantiate(fruitsApple, pos1b, Quaternion.identity); //pink
-        apple2 = Instantiate(fruitsApple, pos4b, Quaternion.identity);
+        apple1 = Instantiate(fruitsApple, pos1a, Quaternion.identity); //pink
+        apple2 = Instantiate(fruitsApple, pos4a, Quaternion.identity);
         apple3 = Instantiate(fruitsApple, pos1f, Quaternion.identity);
         apple4 = Instantiate(fruitsApple, pos1i, Quaternion.identity);
         apple1.name = "apple1";

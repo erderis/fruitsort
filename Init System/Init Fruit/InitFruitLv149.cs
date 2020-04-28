@@ -327,7 +327,7 @@ public class InitFruitLv149 : MonoBehaviour
     {
         manggoes1 = Instantiate(fruitsManggoes, pos2c, Quaternion.identity); //kuning
         manggoes2 = Instantiate(fruitsManggoes, pos3d, Quaternion.identity);
-        manggoes3 = Instantiate(fruitsManggoes, pos4g, Quaternion.identity);
+        manggoes3 = Instantiate(fruitsManggoes, pos4h, Quaternion.identity);
         manggoes4 = Instantiate(fruitsManggoes, pos4j, Quaternion.identity);
         manggoes1.name = "manggoes1";
         manggoes2.name = "manggoes2";

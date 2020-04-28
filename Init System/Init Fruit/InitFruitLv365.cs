@@ -195,7 +195,7 @@ public class InitFruitLv365 : MonoBehaviour
         orange1 = Instantiate(fruitsOrange, pos4a, Quaternion.identity); //orange
         orange2 = Instantiate(fruitsOrange, pos4e, Quaternion.identity);
         orange3 = Instantiate(fruitsOrange, pos4j, Quaternion.identity);
-        orange4 = Instantiate(fruitsOrange, pos1i, Quaternion.identity);
+        orange4 = Instantiate(fruitsOrange, pos1k, Quaternion.identity);
         orange1.name = "orange1";
         orange2.name = "orange2";
         orange3.name = "orange3";
@@ -327,8 +327,8 @@ public class InitFruitLv365 : MonoBehaviour
     {
         manggoes1 = Instantiate(fruitsManggoes, pos1b, Quaternion.identity); //kuning
         manggoes2 = Instantiate(fruitsManggoes, pos4b, Quaternion.identity);
-        manggoes3 = Instantiate(fruitsManggoes, pos1k, Quaternion.identity);
-        manggoes4 = Instantiate(fruitsManggoes, pos3k, Quaternion.identity);
+        manggoes3 = Instantiate(fruitsManggoes, pos1i, Quaternion.identity);
+        manggoes4 = Instantiate(fruitsManggoes, pos3i, Quaternion.identity);
         manggoes1.name = "manggoes1";
         manggoes2.name = "manggoes2";
         manggoes3.name = "manggoes3";

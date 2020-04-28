@@ -195,7 +195,7 @@ public class InitFruitLv283 : MonoBehaviour
         orange1 = Instantiate(fruitsOrange, pos3e, Quaternion.identity); //orange
         orange2 = Instantiate(fruitsOrange, pos3g, Quaternion.identity);
         orange3 = Instantiate(fruitsOrange, pos2j, Quaternion.identity);
-        orange4 = Instantiate(fruitsOrange, pos1l, Quaternion.identity);
+        orange4 = Instantiate(fruitsOrange, pos4l, Quaternion.identity);
         orange1.name = "orange1";
         orange2.name = "orange2";
         orange3.name = "orange3";

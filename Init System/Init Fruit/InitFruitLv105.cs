@@ -218,10 +218,10 @@ public class InitFruitLv105 : MonoBehaviour
 
     void InstantiateBanana()
     {
-        banana1 = Instantiate(fruitsBanana, pos3e, Quaternion.identity); //biru
-        banana2 = Instantiate(fruitsBanana, pos1f, Quaternion.identity);
-        banana3 = Instantiate(fruitsBanana, pos2j, Quaternion.identity);
-        banana4 = Instantiate(fruitsBanana, pos2k, Quaternion.identity);
+        banana1 = Instantiate(fruitsBanana, pos1a, Quaternion.identity); //biru
+        banana2 = Instantiate(fruitsBanana, pos4e, Quaternion.identity);
+        banana3 = Instantiate(fruitsBanana, pos4i, Quaternion.identity);
+        banana4 = Instantiate(fruitsBanana, pos4k, Quaternion.identity);
         banana1.name = "banana1";
         banana2.name = "banana2";
         banana3.name = "banana3";
@@ -256,7 +256,7 @@ public class InitFruitLv105 : MonoBehaviour
         strawberry1 = Instantiate(fruitsStrawberry, pos3a, Quaternion.identity); //biru muda
         strawberry2 = Instantiate(fruitsStrawberry, pos4a, Quaternion.identity);
         strawberry3 = Instantiate(fruitsStrawberry, pos3i, Quaternion.identity);
-        strawberry4 = Instantiate(fruitsStrawberry, pos22l, Quaternion.identity);
+        strawberry4 = Instantiate(fruitsStrawberry, pos2l, Quaternion.identity);
         strawberry1.name = "strawberry1";
         strawberry2.name = "strawberry2";
         strawberry3.name = "strawberry3";
@@ -302,7 +302,7 @@ public class InitFruitLv105 : MonoBehaviour
     void InstantiateBlackBerry()
     {
         blackberry1 = Instantiate(fruitsBlackBerry, pos4c, Quaternion.identity); //coklat
-        blackberry2 = Instantiate(fruitsBlackBerry, pos2f, Quaternion.identity);
+        blackberry2 = Instantiate(fruitsBlackBerry, pos3f, Quaternion.identity);
         blackberry3 = Instantiate(fruitsBlackBerry, pos1g, Quaternion.identity);
         blackberry4 = Instantiate(fruitsBlackBerry, pos1j, Quaternion.identity);
         blackberry1.name = "blackberry1";

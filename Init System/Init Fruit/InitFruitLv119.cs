@@ -256,7 +256,7 @@ public class InitFruitLv119 : MonoBehaviour
         strawberry1 = Instantiate(fruitsStrawberry, pos1e, Quaternion.identity); //biru muda
         strawberry2 = Instantiate(fruitsStrawberry, pos4j, Quaternion.identity);
         strawberry3 = Instantiate(fruitsStrawberry, pos4k, Quaternion.identity);
-        strawberry4 = Instantiate(fruitsStrawberry, pos4l, Quaternion.identity);
+        strawberry4 = Instantiate(fruitsStrawberry, pos3l, Quaternion.identity);
         strawberry1.name = "strawberry1";
         strawberry2.name = "strawberry2";
         strawberry3.name = "strawberry3";

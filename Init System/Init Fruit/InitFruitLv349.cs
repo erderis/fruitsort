@@ -314,9 +314,9 @@ public class InitFruitLv349 : MonoBehaviour
     void InstantiateBlueBerry()
     {
         blueberry1 = Instantiate(fruitsBlueBerry, pos1a, Quaternion.identity); //hijau tua
-        blueberry2 = Instantiate(fruitsBlueBerry, pos3e, Quaternion.identity);
-        blueberry3 = Instantiate(fruitsBlueBerry, pos1i, Quaternion.identity);
-        blueberry4 = Instantiate(fruitsBlueBerry, pos1l, Quaternion.identity);
+        blueberry2 = Instantiate(fruitsBlueBerry, pos2f, Quaternion.identity);
+        blueberry3 = Instantiate(fruitsBlueBerry, pos4j, Quaternion.identity);
+        blueberry4 = Instantiate(fruitsBlueBerry, pos3l, Quaternion.identity);
         blueberry1.name = "blueberry1";
         blueberry2.name = "blueberry2";
         blueberry3.name = "blueberry3";
@@ -325,10 +325,10 @@ public class InitFruitLv349 : MonoBehaviour
 
     void InstantiateManggoes()
     {
-        manggoes1 = Instantiate(fruitsManggoes, pos1a, Quaternion.identity); //kuning
-        manggoes2 = Instantiate(fruitsManggoes, pos2f, Quaternion.identity);
-        manggoes3 = Instantiate(fruitsManggoes, pos4j, Quaternion.identity);
-        manggoes4 = Instantiate(fruitsManggoes, pos3l, Quaternion.identity);
+        manggoes1 = Instantiate(fruitsManggoes, pos3a, Quaternion.identity); //kuning
+        manggoes2 = Instantiate(fruitsManggoes, pos1d, Quaternion.identity);
+        manggoes3 = Instantiate(fruitsManggoes, pos3e, Quaternion.identity);
+        manggoes4 = Instantiate(fruitsManggoes, pos2j, Quaternion.identity);
         manggoes1.name = "manggoes1";
         manggoes2.name = "manggoes2";
         manggoes3.name = "manggoes3";

@@ -192,7 +192,7 @@ public class InitFruitLv165 : MonoBehaviour
 
     void InstantiateOrange()
     {
-        orange1 = Instantiate(fruitsOrange, pos4d, Quaternion.identity); //orange
+        orange1 = Instantiate(fruitsOrange, pos3d, Quaternion.identity); //orange
         orange2 = Instantiate(fruitsOrange, pos3f, Quaternion.identity);
         orange3 = Instantiate(fruitsOrange, pos3g, Quaternion.identity);
         orange4 = Instantiate(fruitsOrange, pos2h, Quaternion.identity);
@@ -205,7 +205,7 @@ public class InitFruitLv165 : MonoBehaviour
 
     void InstantiateCherry()
     {
-        cherry1 = Instantiate(fruitsCherry, pos1a, Quaternion.identity); //merah
+        cherry1 = Instantiate(fruitsCherry, pos1b, Quaternion.identity); //merah
         cherry2 = Instantiate(fruitsCherry, pos1e, Quaternion.identity);
         cherry3 = Instantiate(fruitsCherry, pos1g, Quaternion.identity);
         cherry4 = Instantiate(fruitsCherry, pos4k, Quaternion.identity);

@@ -314,7 +314,7 @@ public class InitFruitLv115 : MonoBehaviour
     void InstantiateBlueBerry()
     {
         blueberry1 = Instantiate(fruitsBlueBerry, pos3g, Quaternion.identity); //hijau tua
-        blueberry2 = Instantiate(fruitsBlueBerry, pos1h, Quaternion.identity);
+        blueberry2 = Instantiate(fruitsBlueBerry, pos1i, Quaternion.identity);
         blueberry3 = Instantiate(fruitsBlueBerry, pos2k, Quaternion.identity);
         blueberry4 = Instantiate(fruitsBlueBerry, pos1l, Quaternion.identity);
         blueberry1.name = "blueberry1";

@@ -266,7 +266,7 @@ public class InitFruitLv311 : MonoBehaviour
     void InstantiateEggplant()
     {
         eggplant1 = Instantiate(fruitsEggplant, pos1a, Quaternion.identity); //abu
-        eggplant2 = Instantiate(fruitsEggplant, pos2g, Quaternion.identity);
+        eggplant2 = Instantiate(fruitsEggplant, pos3g, Quaternion.identity);
         eggplant3 = Instantiate(fruitsEggplant, pos4i, Quaternion.identity);
         eggplant4 = Instantiate(fruitsEggplant, pos2j, Quaternion.identity);
         eggplant1.name = "eggplant1";

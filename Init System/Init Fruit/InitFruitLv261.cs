@@ -278,7 +278,7 @@ public class InitFruitLv261 : MonoBehaviour
     void InstantiatePumpkin()
     {
         pumpkin1 = Instantiate(fruitsPumpkin, pos3b, Quaternion.identity); //hijau tua
-        pumpkin2 = Instantiate(fruitsPumpkin, pos1d, Quaternion.identity);
+        pumpkin2 = Instantiate(fruitsPumpkin, pos4d, Quaternion.identity);
         pumpkin3 = Instantiate(fruitsPumpkin, pos1i, Quaternion.identity);
         pumpkin4 = Instantiate(fruitsPumpkin, pos3k, Quaternion.identity);
         pumpkin1.name = "pumpkin1";

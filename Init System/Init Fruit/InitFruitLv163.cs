@@ -242,7 +242,7 @@ public class InitFruitLv163 : MonoBehaviour
 
     void InstantiateMelon()
     {
-        melon1 = Instantiate(fruitsMelon, pos3, Quaternion.identity); //hijau
+        melon1 = Instantiate(fruitsMelon, pos3b, Quaternion.identity); //hijau
         melon2 = Instantiate(fruitsMelon, pos1d, Quaternion.identity);
         melon3 = Instantiate(fruitsMelon, pos3l, Quaternion.identity);
         melon4 = Instantiate(fruitsMelon, pos4l, Quaternion.identity);
