@@ -23,6 +23,8 @@ public class TimerLv101 : MonoBehaviour, IUnityAdsListener
 
     bool onetime = false;
 
+    bool isFailedShow = false;
+
 
 
 
@@ -84,7 +86,11 @@ public class TimerLv101 : MonoBehaviour, IUnityAdsListener
             {
                 timeLeft = 0;
                 HideCanvasSaveMe();
-                GameOver();
+                if (!isFailedShow)
+                {
+                    GameOver();
+                    isFailedShow = true;
+                }
             }
         }
         if (timeLeft < 10 && timeLeft > 0)

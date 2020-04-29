@@ -10,6 +10,7 @@ public class InitFruitLv3 : MonoBehaviour
 
     void Start()
     {
+
         InstantiateOrange();
         InstantiateCherry();
         InstantiateBanana();

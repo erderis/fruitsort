@@ -111,6 +111,9 @@ public class InitFruitLv100 : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetString("level100", "true");
+
+
         fruits = new List<GameObject>();
 
         InstantiateOrange();

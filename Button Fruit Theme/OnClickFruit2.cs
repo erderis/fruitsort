@@ -56,9 +56,6 @@ public class OnClickFruit2 : MonoBehaviour, IUnityAdsListener
 
         PlayerPrefs.SetString("fruitTag", transform.tag);
 
-        Debug.Log(transform.tag);
-
-
         GameObject ads = transform.GetChild(1).gameObject;
         ads.SetActive(false);
 

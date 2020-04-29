@@ -19,6 +19,8 @@ public class LoadingSplash : MonoBehaviour
 
     void LoadLevel()
     {
-        SceneManager.LoadScene("Level101");
+        string levelNow = PlayerPrefs.GetString("LevelNow", "Level1");
+
+        SceneManager.LoadScene(levelNow);
     }
 }

@@ -19,27 +19,9 @@ public class ShopController : MonoBehaviour
         canvasTheme = GameObject.Find("Canvas Theme");
         canvasPreview.SetActive(false);
 
-        CheckIfAdsRemoved();
 
         CheckIfLevelComplete();
 
-    }
-
-    void CheckIfAdsRemoved()
-    {
-        string isPurchased = PlayerPrefs.GetString("isAdPurchased", "false");
-        if (isPurchased == "true")
-        {
-            foreach (GameObject videoIcon in videoIcons)
-            {
-                videoIcon.SetActive(false);
-            }
-            for (int i = 2; i <= 5; i++)
-            {
-                PlayerPrefs.SetString("AdsFruit" + i, "true");
-
-            }
-        }
     }
 
     void CheckIfLevelComplete()
@@ -201,5 +183,12 @@ public class ShopController : MonoBehaviour
     {
         string lastToTheme = PlayerPrefs.GetString("lastToTheme", "Level2");
         SceneManager.LoadScene(lastToTheme);
+
+
+        PlayerPrefs.SetString("isBackFromThemeToCanvasReview", "true");
+
+        PlayerPrefs.SetString("isBackFromThemeToCanvasKeepWatching", "true");
+
+
     }
 }

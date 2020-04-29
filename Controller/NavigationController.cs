@@ -21,12 +21,16 @@ public class NavigationController : MonoBehaviour
 
 
     string gameId = "3524520";
-    bool testMode = true;
+    bool testMode = false;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+
+        PlayerPrefs.SetString("LevelNow", SceneManager.GetActiveScene().name);
+
         cStart = Instantiate(canvasStart, transform.position, Quaternion.identity);
         cFailed = Instantiate(canvasFailed, transform.position, Quaternion.identity);
         cSaveMe = Instantiate(canvasSaveMe, transform.position, Quaternion.identity);
@@ -58,6 +62,9 @@ public class NavigationController : MonoBehaviour
         cFailed.SetActive(false);
         SceneManager.LoadScene(currentScene);
         PlayerPrefs.SetString("repeat", "repeat");
+
+        PlayerPrefs.SetString("isBackFromThemeToCanvasReview", "true");
+
     }
 
     public void TextStart()

@@ -9,17 +9,35 @@ public class CanvasStartController : MonoBehaviour
     GameObject background;
     GameObject iapManager;
     GameObject imageStage;
+    GameObject panelNotif;
+    GameObject buttonNoAds;
+    GameObject panelSuccess;
+
     Button buttonAds;
     Button buttonTheme;
     Button textStart;
+
+    Button buyPremium;
+    Button close;
+    Button closePanelSuccess;
+
+    bool isLoaded = false;
     void Start()
     {
         background = GameObject.FindWithTag("background");
         iapManager = GameObject.FindWithTag("IAP Manager");
         imageStage = transform.GetChild(1).gameObject;
+        buttonNoAds = transform.GetChild(2).gameObject;
+        panelNotif = transform.GetChild(5).gameObject;
+        panelSuccess = transform.GetChild(6).gameObject;
         buttonAds = transform.GetChild(2).GetComponent<Button>();
         buttonTheme = transform.GetChild(3).GetComponent<Button>();
         textStart = transform.GetChild(4).GetComponent<Button>();
+
+        buyPremium = panelNotif.transform.GetChild(0).GetChild(1).GetComponent<Button>();
+        close = panelNotif.transform.GetChild(0).GetChild(2).GetComponent<Button>();
+        closePanelSuccess = panelSuccess.transform.GetChild(0).GetChild(1).GetComponent<Button>();
+
 
 
         string currentScene = SceneManager.GetActiveScene().name;
@@ -57,6 +75,9 @@ public class CanvasStartController : MonoBehaviour
             int num2 = int.Parse(splitScene[splitScene.Length - 1].ToString());
             numberNext = int.Parse(num1.ToString()+num2.ToString());
 
+            imageStage.transform.GetChild(0).GetComponent<Text>().fontSize = 60;
+            imageStage.transform.GetChild(1).GetComponent<Text>().fontSize = 60;
+
         }
         else if(isLevel100 == "true")
         {
@@ -64,6 +85,9 @@ public class CanvasStartController : MonoBehaviour
             int num2 = int.Parse(splitScene[splitScene.Length - 2].ToString());
             int num3 = int.Parse(splitScene[splitScene.Length - 1].ToString());
             numberNext = int.Parse(num1.ToString() + num2.ToString()+num3.ToString());
+
+            imageStage.transform.GetChild(0).GetComponent<Text>().fontSize = 50;
+            imageStage.transform.GetChild(1).GetComponent<Text>().fontSize = 50;
 
         }
         else
@@ -79,11 +103,15 @@ public class CanvasStartController : MonoBehaviour
         buttonTheme.onClick.AddListener(buttonThemeOnClick);
         textStart.onClick.AddListener(buttonStartOnClick);
 
+        buyPremium.onClick.AddListener(buttonSAdsPremiumOnClick);
+        close.onClick.AddListener(buttonCloseOnClick);
+        closePanelSuccess.onClick.AddListener(buttonCloseSuccessOnClick);
+
     }
 
     void buttonAdsOnClick()
     {
-        iapManager.GetComponent<IAPManager>().BuyRemoveAds();
+        panelNotif.SetActive(true);
     }
 
     void buttonThemeOnClick()
@@ -94,5 +122,45 @@ public class CanvasStartController : MonoBehaviour
     void buttonStartOnClick()
     {
         background.GetComponent<NavigationController>().TextStart();
+    }
+
+    void buttonSAdsPremiumOnClick()
+    {
+        panelNotif.SetActive(false);
+        iapManager.GetComponent<IAPManager>().BuyRemoveAds();
+
+    }
+    void buttonCloseOnClick()
+    {
+        panelNotif.SetActive(false);
+    }
+    void buttonCloseSuccessOnClick()
+    {
+        panelSuccess.SetActive(false);
+    }
+
+    void Update()
+    {
+
+        string isPurchased = PlayerPrefs.GetString("isAdPurchased", "false");
+        string isShowSuccessOnce = PlayerPrefs.GetString("isShowSuccessOnce", "true");
+
+        if(isPurchased == "true")
+        {
+
+            if (!isLoaded)
+            {
+                buttonNoAds.SetActive(false);
+                isLoaded = true;
+            }
+
+            if(isShowSuccessOnce == "true")
+            {
+                //show notif success
+                panelSuccess.SetActive(true);
+                PlayerPrefs.SetString("isShowSuccessOnce", "false");
+            }
+        }
+
     }
 }

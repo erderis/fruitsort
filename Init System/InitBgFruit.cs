@@ -6,7 +6,7 @@ public class InitBgFruit : MonoBehaviour
 {
     void Start()
     {
-        InitBgFruits();
+        Invoke("InitBgFruits", 0.3f);
     }
 
 
@@ -15,6 +15,7 @@ public class InitBgFruit : MonoBehaviour
         string bgTag = PlayerPrefs.GetString("bgTag", "default");
         string fruitTag = PlayerPrefs.GetString("fruitTag", "fruit1");
 
+        Debug.Log(fruitTag);
         Sprite bgSprite = Resources.Load<Sprite>("background/" + bgTag);
         GetComponent<SpriteRenderer>().sprite = bgSprite;
 

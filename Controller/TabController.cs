@@ -52,7 +52,6 @@ public class TabController : MonoBehaviour
         tab2.GetComponent<Image>().sprite = tabColor2;
 
         InitBg();
-        CheckIfAdsRemoved();
     }
 
 
@@ -175,24 +174,6 @@ public class TabController : MonoBehaviour
             GameObject ads = bg5.transform.GetChild(2).gameObject;
             ads.SetActive(false);
         }
-    }
-
-    void CheckIfAdsRemoved()
-    {
-        string isPurchased = PlayerPrefs.GetString("isAdPurchased", "false");
-        if(isPurchased == "true")
-        {
-            foreach (GameObject videoIcon in videoIcons)
-            {
-                videoIcon.SetActive(false);
-            }
-            for (int i = 1; i <= 5; i++)
-            {
-                PlayerPrefs.SetString("AdsBg" + i, "true");
-
-            }
-        }
-
     }
 
 }

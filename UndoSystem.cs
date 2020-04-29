@@ -13,7 +13,7 @@ public class UndoSystem : MonoBehaviour, IUnityAdsListener
 
     string gameId = "3524520";
     string myPlacementId = "Undo_Rewards";
-    bool testMode = true;
+    bool testMode = false;
     bool isReady = false;
 
 
@@ -51,21 +51,6 @@ public class UndoSystem : MonoBehaviour, IUnityAdsListener
     public void Undo()
     {
 
-        string isPurchased = PlayerPrefs.GetString("isAdPurchased", "false");
-        if(isPurchased == "true")
-        {
-            undoCount.GetComponent<Text>().text = "";
-            if (UndoList.Count > 0)
-            {
-                UndoList[UndoList.Count - 1].Restore();
-                UndoList.RemoveAt(UndoList.Count - 1);
-
-                PlayerPrefs.SetInt("onMove", 0);
-
-            }
-        }
-        else
-        {
             int currentClickedUndo = PlayerPrefs.GetInt("currentClickedUndo", 5);
             if (currentClickedUndo == 1)
             {
@@ -96,33 +81,27 @@ public class UndoSystem : MonoBehaviour, IUnityAdsListener
 
                 }
             }
-        }
-        
         
     }
 
     void Start()
     {
 
+        adsIcon.SetActive(false);
+        UndoList = new List<setting>();
+
         PlayerPrefs.SetString("isShowingAdsUndo", "false");
         int currentClickedUndo = PlayerPrefs.GetInt("currentClickedUndo", 5);
 
-        string isPurchased = PlayerPrefs.GetString("isAdPurchased", "false");
+        undoCount.GetComponent<Text>().text = currentClickedUndo.ToString();
 
-        if (isPurchased == "true")
+        if(currentClickedUndo == 0)
         {
-            undoCount.GetComponent<Text>().text = "";
-
-        }
-        else
-        {
-            undoCount.GetComponent<Text>().text = currentClickedUndo.ToString();
+            adsIcon.SetActive(true);
         }
 
 
 
-        adsIcon.SetActive(false);
-        UndoList = new List<setting>();
 
 
         Advertisement.AddListener(this);
