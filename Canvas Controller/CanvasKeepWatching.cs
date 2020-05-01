@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CanvasKeepWatching : MonoBehaviour
 {
     GameObject iapManager;
+    GameObject music;
 
 
     Button keepWatching;
@@ -30,6 +31,7 @@ public class CanvasKeepWatching : MonoBehaviour
         }
 
         iapManager = GameObject.FindWithTag("IAP Manager");
+        music = GameObject.FindWithTag("music");
 
 
         keepWatching = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Button>();
@@ -45,13 +47,14 @@ public class CanvasKeepWatching : MonoBehaviour
 
     void KeepWatching()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
         Destroy(transform.gameObject, 0);
     }
 
     void RemoveAds()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
         iapManager.GetComponent<IAPManager>().BuyRemoveAds();
-
         Destroy(transform.gameObject, 0);
 
     }

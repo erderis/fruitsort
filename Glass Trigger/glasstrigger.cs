@@ -9,6 +9,9 @@ public class glasstrigger : MonoBehaviour
     GameObject particle;
 
     public UndoSystem undo;
+    public GameObject music;
+
+    bool isSoundGlassOnce = false;
 
     void Start()
     {
@@ -19,9 +22,12 @@ public class glasstrigger : MonoBehaviour
         particle.SetActive(false);
 
         undo = GameObject.FindWithTag("Undo System").GetComponent<UndoSystem>();
+
+        music = GameObject.FindWithTag("music");
+
     }
 
-    // Update is called  per frame
+    // Update is called per frame
     void Update()
     {
         Invoke("SetGlass", 2f);
@@ -39,6 +45,11 @@ public class glasstrigger : MonoBehaviour
                 PlayerPrefs.SetInt(listCollider[0].gameObject.tag, 1);
                 particle.SetActive(true);
 
+                if (!isSoundGlassOnce)
+                {
+                    music.GetComponent<MusicClass>().GlassFullSound();
+                    isSoundGlassOnce = true;
+                }
             }
         }
         else if (listCollider.Count == 0)
@@ -75,6 +86,8 @@ public class glasstrigger : MonoBehaviour
             {
                 if (listCollider.Count > 0)
                 {
+                    music.GetComponent<MusicClass>().FruitUpSound();
+
                     string collidername = listCollider[listCollider.Count - 1].gameObject.name;
                     PlayerPrefs.SetString("collidername", collidername);
                     GameObject fruit = GameObject.Find(collidername);
@@ -101,6 +114,9 @@ public class glasstrigger : MonoBehaviour
                     {
                         fruit.transform.position = new Vector3(transform.position.x, transform.position.y + 8f, transform.position.z + 1);
                         fruit.GetComponent<Rigidbody2D>().gravityScale = 20;
+
+                        music.GetComponent<MusicClass>().FruitUpSound();
+
                     }
 
                     else
@@ -108,12 +124,17 @@ public class glasstrigger : MonoBehaviour
                     {
                         fruit.GetComponent<Rigidbody2D>().gravityScale = 20;
 
+                        music.GetComponent<MusicClass>().FruitUpSound();
+
                     }
                 }
                 else
                 {
                     fruit.transform.position = new Vector3(transform.position.x, transform.position.y + 8f, transform.position.z + 1);
                     fruit.GetComponent<Rigidbody2D>().gravityScale = 20;
+
+                    music.GetComponent<MusicClass>().FruitUpSound();
+
 
                 }
                 onMove = false;

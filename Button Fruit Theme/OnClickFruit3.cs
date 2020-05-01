@@ -4,15 +4,18 @@ using UnityEngine;
 using UnityEngine.Advertisements;
 public class OnClickFruit3 : MonoBehaviour, IUnityAdsListener
 {
+    GameObject music;
 
     string gameId = "3524520";
     string myPlacementId = "Fruit_Theme3";
-    bool testMode = true;
+    bool testMode = false;
 
     bool isReady = false;
 
     void Start()
     {
+        music = GameObject.FindWithTag("music");
+
         Advertisement.AddListener(this);
         Advertisement.Initialize(gameId, testMode);
 
@@ -25,6 +28,8 @@ public class OnClickFruit3 : MonoBehaviour, IUnityAdsListener
 
     public void OnClicked()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
         string isShowAds = PlayerPrefs.GetString("AdsFruit3", "false");
 
         if(isShowAds == "false")

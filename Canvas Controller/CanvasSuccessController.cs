@@ -7,6 +7,8 @@ public class CanvasSuccessController : MonoBehaviour
 {
     GameObject background;
     GameObject awesomeBg;
+
+    GameObject music;
     Button next;
 
     string[] textSuccess = {"Awesome", "Great", "Cool", "Perfect", "Bravo"};
@@ -20,6 +22,9 @@ public class CanvasSuccessController : MonoBehaviour
         awesomeBg.transform.GetChild(0).GetComponent<Text>().text = textAwesome;
 
         next.onClick.AddListener(nextOnClick);
+
+        music = GameObject.FindWithTag("music");
+        music.GetComponent<MusicClass>().WinSound();
 
     }
 

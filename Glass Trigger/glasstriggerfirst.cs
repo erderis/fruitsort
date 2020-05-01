@@ -17,6 +17,9 @@ public class glasstriggerfirst : MonoBehaviour
     public GameObject canvasSuccess;
     public GameObject particleConfetti;
 
+    public GameObject music;
+
+
     public Text text;
 
     string gameId = "3524520";
@@ -39,13 +42,15 @@ public class glasstriggerfirst : MonoBehaviour
         canvasSuccess.SetActive(false);
         particleConfetti.SetActive(false);
 
+        music = GameObject.FindWithTag("music");
+
+
     }
 
     // Update is called  per frame
     void Update()
     {
         Invoke("setGlass", 2f);
-
     }
 
     void setGlass()
@@ -114,6 +119,8 @@ public class glasstriggerfirst : MonoBehaviour
                         hand.transform.position = new Vector3(9.52f, -10.01308f, -3.372642f);
                         text.text = "Click to Move Fruit";
 
+                        music.GetComponent<MusicClass>().FruitUpSound();
+
 
                     }
                 }
@@ -133,17 +140,23 @@ public class glasstriggerfirst : MonoBehaviour
                             canvasSuccess.SetActive(true);
                             particleConfetti.SetActive(true);
 
+                            music.GetComponent<MusicClass>().FruitUpSound();
+
                         }
 
                         else
                         {
                             fruit.GetComponent<Rigidbody2D>().gravityScale = 20;
+                            music.GetComponent<MusicClass>().FruitUpSound();
+
                         }
                     }
                     else
                     {
                         fruit.transform.position = new Vector3(transform.position.x, transform.position.y + 11.5f, transform.position.z + 1);
                         fruit.GetComponent<Rigidbody2D>().gravityScale = 20;
+                        music.GetComponent<MusicClass>().FruitUpSound();
+
                     }
                     onMove = false;
                     PlayerPrefs.SetInt("onMove", onMove ? 1 : 0);

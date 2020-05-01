@@ -9,6 +9,7 @@ public class UndoSystem : MonoBehaviour, IUnityAdsListener
     public List<setting> UndoList;
     public GameObject adsIcon;
     public GameObject undoCount;
+    public GameObject music;
 
 
     string gameId = "3524520";
@@ -69,7 +70,10 @@ public class UndoSystem : MonoBehaviour, IUnityAdsListener
             {
                 if (UndoList.Count > 0)
                 {
-                    UndoList[UndoList.Count - 1].Restore();
+
+                music.GetComponent<MusicClass>().FruitUpSound();
+
+                UndoList[UndoList.Count - 1].Restore();
                     UndoList.RemoveAt(UndoList.Count - 1);
 
                     PlayerPrefs.SetInt("onMove", 0);
@@ -86,6 +90,7 @@ public class UndoSystem : MonoBehaviour, IUnityAdsListener
 
     void Start()
     {
+        music = GameObject.FindWithTag("music");
 
         adsIcon.SetActive(false);
         UndoList = new List<setting>();

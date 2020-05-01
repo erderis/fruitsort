@@ -14,6 +14,8 @@ public class NavigationController : MonoBehaviour
     public GameObject canvasFailed;
     public GameObject canvasSaveMe;
     public GameObject timer;
+    public GameObject music;
+    
 
     GameObject cStart;
     GameObject cFailed;
@@ -35,9 +37,9 @@ public class NavigationController : MonoBehaviour
         cFailed = Instantiate(canvasFailed, transform.position, Quaternion.identity);
         cSaveMe = Instantiate(canvasSaveMe, transform.position, Quaternion.identity);
 
+        music = GameObject.FindWithTag("music");
+
         Advertisement.Initialize(gameId, testMode);
-
-
 
         Physics2D.gravity = Vector2.zero;
 
@@ -58,6 +60,9 @@ public class NavigationController : MonoBehaviour
 
     public void RepeatfromStart()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
+
         string currentScene = SceneManager.GetActiveScene().name;
         cFailed.SetActive(false);
         SceneManager.LoadScene(currentScene);
@@ -82,11 +87,14 @@ public class NavigationController : MonoBehaviour
         PlayerPrefs.SetString("lastToTheme", currentScene);
         SceneManager.LoadScene("Theme");
 
+
     }
 
 
     public void NextLevel()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
         string currentScene = SceneManager.GetActiveScene().name;
         char[] splitScene = currentScene.ToCharArray();
 
@@ -139,15 +147,18 @@ public class NavigationController : MonoBehaviour
 
     public void GameOver()
     {
+        music.GetComponent<MusicClass>().LostSound();
         cFailed.SetActive(true);
     }
 
     public void ShowCanvasSaveMe()
     {
+        music.GetComponent<MusicClass>().BeforeLostSound();
         cSaveMe.SetActive(true);
     }
     public void HideCanvasSaveMe()
     {
+        music.GetComponent<MusicClass>().BeforeLostSoundStop();
         cSaveMe.SetActive(false);
     }
 }

@@ -15,10 +15,12 @@ public class TabController : MonoBehaviour
     public Sprite tabColor1;
     public Sprite tabColor2;
 
+    GameObject music;
+
 
     void Start()
     {
-
+        music = GameObject.FindWithTag("music");
         tabView1.SetActive(true);
         tabView2.SetActive(false);
         
@@ -33,6 +35,8 @@ public class TabController : MonoBehaviour
     }
     public void Tab1Clicked()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
         tabView1.SetActive(true);
         tabView2.SetActive(false);
 
@@ -45,6 +49,8 @@ public class TabController : MonoBehaviour
 
     public void Tab2Clicked()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
         tabView1.SetActive(false);
         tabView2.SetActive(true);
 

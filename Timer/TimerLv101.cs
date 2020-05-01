@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class TimerLv101 : MonoBehaviour, IUnityAdsListener
 {
     GameObject background;
+    GameObject music;
 
 
     public float timeLeft;
@@ -19,11 +20,12 @@ public class TimerLv101 : MonoBehaviour, IUnityAdsListener
 
     string gameId = "3524520";
     string myPlacementId = "Continue_Game";
-    bool testMode = true;
+    bool testMode = false;
 
     bool onetime = false;
 
     bool isFailedShow = false;
+    bool isCountDownSound = false;
 
 
 
@@ -32,6 +34,7 @@ public class TimerLv101 : MonoBehaviour, IUnityAdsListener
     void Start()
     {
         background = GameObject.FindWithTag("background");
+        music = GameObject.FindWithTag("music");
 
         Advertisement.AddListener(this);
         Advertisement.Initialize(gameId, testMode);
@@ -71,6 +74,7 @@ public class TimerLv101 : MonoBehaviour, IUnityAdsListener
         {
             countDown.text = "";
             timeLeft = 0;
+            music.GetComponent<MusicClass>().CountDownSoundUnder10Stop();
 
         }
         if (timeLeft < 0)
@@ -96,9 +100,19 @@ public class TimerLv101 : MonoBehaviour, IUnityAdsListener
         if (timeLeft < 10 && timeLeft > 0)
         {
             countDown.color = Color.red;
+
+            if (!isCountDownSound)
+            {
+                music.GetComponent<MusicClass>().CountDownSoundUnder10();
+                isCountDownSound = true;
+            }
         }
 
+        if (timeLeft < 0)
+        {
+            music.GetComponent<MusicClass>().CountDownSoundUnder10Stop();
 
+        }
     }
     void ShowCanvasSaveMe()
     {

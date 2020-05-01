@@ -5,15 +5,17 @@ using UnityEngine.UI;
 using UnityEngine.Advertisements;
 public class BgOnClick1 : MonoBehaviour, IUnityAdsListener
 {
+    GameObject music;
 
     string gameId = "3524520";
     string myPlacementId = "bg_Theme1";
-    bool testMode = true;
+    bool testMode = false;
 
     bool isReady = false;
 
     void Start()
     {
+        music = GameObject.FindWithTag("music");
         Advertisement.AddListener(this);
         Advertisement.Initialize(gameId, testMode);
 
@@ -26,6 +28,8 @@ public class BgOnClick1 : MonoBehaviour, IUnityAdsListener
 
     public void OnClicked()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
         string isShowAds = PlayerPrefs.GetString("AdsBg1", "false");
 
         if (isShowAds == "false")

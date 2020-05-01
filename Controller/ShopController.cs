@@ -9,6 +9,7 @@ public class ShopController : MonoBehaviour
 
     GameObject panel;
     GameObject canvasTheme;
+    GameObject music;
     public GameObject[] videoIcons;
 
    
@@ -16,6 +17,8 @@ public class ShopController : MonoBehaviour
 
     void Start()
     {
+        music = GameObject.FindWithTag("music");
+
         canvasTheme = GameObject.Find("Canvas Theme");
         canvasPreview.SetActive(false);
 
@@ -64,6 +67,8 @@ public class ShopController : MonoBehaviour
 
     public void ShowPreview(Sprite background)
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
         Physics2D.gravity = new Vector2(0, -15f);
         canvasTheme.SetActive(false);
         canvasPreview.SetActive(true);
@@ -74,12 +79,16 @@ public class ShopController : MonoBehaviour
 
     public void closeCanvasPreview()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
         canvasPreview.SetActive(false);
         canvasTheme.SetActive(true);
     }
 
     public void SetFruit(GameObject newGO)
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
         if (newGO.tag == "fruit1")
         {
             SetFruitNext(newGO);
@@ -157,7 +166,8 @@ public class ShopController : MonoBehaviour
 
     public void SetBackground(GameObject newGO)
     {
-      
+        music.GetComponent<MusicClass>().ButtonSound();
+
 
         string nameTag = PlayerPrefs.GetString("bgTag", "default");
 
@@ -181,6 +191,8 @@ public class ShopController : MonoBehaviour
 
     public void CloseTheme()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
         string lastToTheme = PlayerPrefs.GetString("lastToTheme", "Level2");
         SceneManager.LoadScene(lastToTheme);
 

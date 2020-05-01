@@ -15,6 +15,9 @@ public class glasstriggerfirst1 : MonoBehaviour
     public GameObject canvasSuccess;
     public GameObject canvasButton;
     public GameObject particleConfetti;
+    
+    public GameObject music;
+
 
     public Text text;
 
@@ -28,6 +31,9 @@ public class glasstriggerfirst1 : MonoBehaviour
         particle.SetActive(false);
         canvasSuccess.SetActive(false);
         particleConfetti.SetActive(false);
+
+        music = GameObject.FindWithTag("music");
+
 
     }
 
@@ -104,6 +110,7 @@ public class glasstriggerfirst1 : MonoBehaviour
                         hand.transform.position = new Vector3(9.52f, -10.01308f, -3.372642f);
                         text.text = "Click to Move Fruit";
 
+                        music.GetComponent<MusicClass>().FruitUpSound();
 
                     }
                 }
@@ -125,18 +132,23 @@ public class glasstriggerfirst1 : MonoBehaviour
                             particleConfetti.SetActive(true);
                             PlayerPrefs.SetString("repeat", null);
 
+                            music.GetComponent<MusicClass>().WinSound();
 
                         }
 
                         else
                         {
                             fruit.GetComponent<Rigidbody2D>().gravityScale = 20;
+                            music.GetComponent<MusicClass>().FruitUpSound();
+
                         }
                     }
                     else
                     {
                         fruit.transform.position = new Vector3(transform.position.x, transform.position.y + 11.5f, transform.position.z + 1);
                         fruit.GetComponent<Rigidbody2D>().gravityScale = 20;
+                        music.GetComponent<MusicClass>().FruitUpSound();
+
                     }
                     onMove = false;
                     PlayerPrefs.SetInt("onMove", onMove ? 1 : 0);
@@ -160,6 +172,8 @@ public class glasstriggerfirst1 : MonoBehaviour
 
     public void LoadLevel()
     {
+        music.GetComponent<MusicClass>().ButtonSound();
+
         SceneManager.LoadScene("level2");
     }
 }
